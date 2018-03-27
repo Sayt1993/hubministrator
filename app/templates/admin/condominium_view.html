@@ -1,0 +1,50 @@
+{% import "bootstrap/utils.html" as utils %}
+{% extends "base.html" %}
+{% block title %}Roles{% endblock %}
+{% block body %}
+<div class="content-section">
+  <div class="outer">
+    <div class="middle">
+      <div class="inner">
+        <br/>
+        {{ utils.flashed_messages() }}
+        <br/>
+        <h1 style="text-align:center;">Dettagli del condominio: {{ condo_data.condo_name }}</h1>
+          <hr class="intro-divider">
+          <div class="center">
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th width="15%"> Data di registrazione </th>
+                  <th width="15%"> C.F. </th>
+                  <th width="15%"> Città </th>
+                  <th width="15%"> Distretto </th>
+                  <th width="15%"> Indirizzo </th>
+                  <th width="15%"> N. di interni </th>
+                  <th width="15%"> N. di condomini </th>
+                  <th width="15%"> Scale </th>
+                  <th width="15%"> Appartamenti </th>
+                  <th width="15%"> CAP </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td> {{ condo_data.condo_age }} </td>
+                  <td> {{ condo_data.cf_c }} </td>
+                  <td> {{ condo_data.city }} </td>
+                  <td> {{ condo_data.district }} </td>
+                  <td> {{ condo_data.address }} </td>
+                  <td> {{ condo_data.house_n }} </td>
+                  <td> {{ condo_data.condo_n }} </td>
+                  <td> {{ condo_data.stair_n }} </td>
+                  <td> {{ condo_data.flat_n }} </td>
+                  <td> {{ condo_data.cap }} </td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
