@@ -2,6 +2,6 @@
 
 from flask import Blueprint
 
-admin = Blueprint('admin', __name__)
+home = Blueprint('customer', __name__)
 
 from . import views

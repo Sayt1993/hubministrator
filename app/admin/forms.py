@@ -1,37 +1,14 @@
 # app/admin/forms.py
 
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
-from wtforms.validators import DataRequired
-from wtforms.ext.sqlalchemy.fields import QuerySelectField
-from ..models import Department, Role
+from wtforms import PasswordField, StringField, SubmitField, SelectField, ValidationError
+from wtforms.validators import DataRequired, Email, EqualTo
 
-class DepartmentForm(FlaskForm):
-    """
-    Form for admin to add or edit a department
-    """
-    name = StringField('Name', validators=[DataRequired()])
-    description = StringField('Description', validators=[DataRequired()])
-    submit = SubmitField('Submit')
+class AdminForm(FlaskForm):
+    
+    license_m = StringField('License number', validators=[DataRequired()])
+    p_iva = StringField('P. iva', validators=[DataRequired()])
+    condo_own_n = StringField('condo_own_n', validators=[DataRequired()])
 
-class RoleForm(FlaskForm):
-    """
-    Form for admin to add or edit a role
-    """
-    name = StringField('Name', validators=[DataRequired()])
-    description = StringField('Description', validators=[DataRequired()])
-    submit = SubmitField('Submit')
-
-class EmployeeAssignForm(FlaskForm):
-    """
-    Form for admin to assign departments and roles to employees
-    """
-    department = QuerySelectField(query_factory=lambda: Department.query.all(),
-                                  get_label="name")
-    role = QuerySelectField(query_factory=lambda: Role.query.all(),
-                            get_label="name")
-    submit = SubmitField('Submit')
-
-
-
-
+    #condo_fk = db.relationship('Condo', backref='administrators_registry', lazy='dynamic')
+    

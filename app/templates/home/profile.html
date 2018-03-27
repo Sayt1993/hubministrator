@@ -1,0 +1,28 @@
+<!-- app/templates/home/profile.html -->
+
+{% import "bootstrap/utils.html" as utils %}
+{% extends "base.html" %}
+{% block title %}User Profile{% endblock %}
+{% block body %}
+<div class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="intro-message">
+                    <h1>My Profile</h1>
+                    <hr class="intro-divider">
+                    <span>Email: </span><span>{{user.email}}</span>
+                    <br />
+                    <span>Username: </span><span>{{user.username}}</span>
+                    <br />
+                    <span>Admin: </span><span>{{user.is_admin}}</span>
+                    <br />
+                    <span>Provider: </span><span>{{user.is_provider}}</span>
+                    <br />
+                    <span>Resident: </span><span>{{user.is_resident}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
