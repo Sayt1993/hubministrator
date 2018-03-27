@@ -9,26 +9,28 @@
         <br/>
         {{ utils.flashed_messages() }}
         <br/>
-        <h1 style="text-align:center;">Condominium List</h1>
-        {% if condos %}
+        <h1 style="text-align:center;">Lista di condomini</h1>
           <hr class="intro-divider">
           <div class="center">
+          {% if condos_data %}
             <table class="table table-striped table-bordered">
               <thead>
                 <tr>
-                  <th width="15%"> Condo name </th>
+                  <th width="15%"> Nome </th>
                 </tr>
               </thead>
               <tbody>
-              {% for condo in condos %}
+              {% for data in condos_data %}
                 <tr>
-                  <td> {{ condo.condo_name }} </td>
+                  <td> <a href="{{url_for('admin.condominium_view', id=data.id_condo)}}"> {{ data.condo_name }} </a></td>
                 </tr>
               {% endfor %}
               </tbody>
             </table>
+          {% else %}
+              <h6>Al momento non gestisci nessun condominio.</h6>
+          {% endif %}
         </div>
-      {% endif %}
       </div>
     </div>
   </div>
