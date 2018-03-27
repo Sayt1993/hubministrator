@@ -11,7 +11,7 @@
             <div class="col-12" id="header_container">
                 <div class="row">
                     <div class="col-2">
-                        <h3><span style="color: red;">Hub</span>Ministrator</h3>
+                        <a href="{{url_for('home.dashboard')}}"><h3><span style="color: red;">Hub</span>Ministrator</h3></a>
                     </div>
                     <div class="col-10" id="header_content_wrapper">
                         <div id="user_logged_container">
@@ -33,14 +33,14 @@
             <div class="col-2" id="left_bar_container">
                 <div id="left_bar">
                     <nav class="nav navbar-light">
-                        <a href="{{url_for('home.dashboard')}}" class="nav-link"><span><i class="fas fa-home"></i> Dashboard</span></a>
-                        <a href="{{url_for('admin.condominiums_list')}}" class="nav-link"><span><i class="fas fa-building"></i> Condominiums</span></a>
-                        <a href="" class="nav-link"><span><i class="fas fa-address-book"></i> Customers</span></a>
-                        <a href="" class="nav-link"><span><i class="fas fa-dollar-sign"></i> Payments</span></a>
-                        <a href="" class="nav-link"><span><i class="fas fa-truck"></i> Fornitures</span></a>
-                        <a href="" class="nav-link"><span><i class="fas fa-calendar-alt"></i> Calendar</span></a>
-                        <a href="" class="nav-link"><span><i class="fas fa-exclamation"></i> Issues</span></a>
-                        <a href="{{url_for('home.show_profile')}}" class="nav-link"><span><i class="fas fa-user"></i> Profile</span></a>
+                        <a href="{{url_for('home.dashboard')}}" class="nav-link"><span><i class="fas fa-home"></i> Homepage</span></a>
+                        <a href="{{url_for('admin.condominiums_list')}}" class="nav-link"><span><i class="fas fa-building"></i> Condomini</span></a>
+                        <a href="" class="nav-link"><span><i class="fas fa-address-book"></i> Condomini</span></a>
+                        <a href="" class="nav-link"><span><i class="fas fa-dollar-sign"></i> Pagamenti</span></a>
+                        <a href="" class="nav-link"><span><i class="fas fa-truck"></i> Fornitori</span></a>
+                        <a href="" class="nav-link"><span><i class="fas fa-calendar-alt"></i> Calendario</span></a>
+                        <a href="" class="nav-link"><span><i class="fas fa-exclamation"></i> Segnalazioni</span></a>
+                        <a href="{{url_for('home.show_profile')}}" class="nav-link"><span><i class="fas fa-user"></i> Profilo</span></a>
                     </nav>
                 </div>
             </div>
