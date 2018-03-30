@@ -1,3 +1,11 @@
+#header_wrapper {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 999;
+    background: white;
+}
+
 #header_container {
     border-bottom: 1px solid #96191b;
     height: 70px;
@@ -54,10 +62,13 @@
 }
 
 #left_bar {
-    height: 91%;
+    position: fixed;
+    width: 200px;
+    top: 70px;
     background: #bc1c1c;
     padding: 0px;
     min-width: 155px;
+    height: 100%;
 /*    width: 155px;*/
     border-right: 2px solid #96191b;
     box-shadow: 2px 13px 20px 0px #631616;
@@ -100,6 +111,7 @@
 
 #body_container {
     padding: 10px;
+    margin-top: 60px;
 }
 
 #body_wrapper {

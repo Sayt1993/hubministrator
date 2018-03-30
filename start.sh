@@ -7,6 +7,9 @@ workon my-venv
 export FLASK_CONFIG=development
 export FLASK_APP=run.py
 
+sudo apt-get install libmysqlclient-dev
+pip install -r requirements.txt
+
 rm instance/config.py
 touch istance/config.py
 

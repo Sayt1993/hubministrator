@@ -66,6 +66,8 @@ class Resident_Registry(db.Model):
     flat = db.Column(db.String(2), nullable=False)
     thousandths = db.Column(db.Float, nullable=False)
     id_usr = db.Column(db.Integer, db.ForeignKey('users.id_usr'))
+    
+    condo_fk = db.relationship('Condo', backref='residents_registry', lazy='dynamic')
 
 
 class Administrator_Registry(db.Model):
@@ -97,6 +99,7 @@ class Provider_Registry(db.Model):
     id_usr = db.Column(db.Integer, db.ForeignKey('users.id_usr'))
 
     provider_fk = db.relationship('Provider_Category', backref='providers_registry', lazy='dynamic')
+    condo_fk = db.relationship('Condo', backref='providers_registry', lazy='dynamic')
 
 
 class Provider_Category(db.Model):
@@ -124,11 +127,13 @@ class Provider_Category(db.Model):
 class Condo(db.Model):
 
     __tablename__ = 'condos'
-    id_condo = db.Column(db.Integer, primary_key=True)
+    id_condo = db.Column(db.Integer, primary_key=True, autoincrement=True)
     condo_name = db.Column(db.String(30), nullable=False)
     
     id_admin = db.Column(db.Integer, db.ForeignKey('administrators_registry.id_admin'))
-
+    id_provider = db.Column(db.Integer, db.ForeignKey('providers_registry.id_provider'))
+    id_resident = db.Column(db.Integer, db.ForeignKey('residents_registry.id_resident'))
+    
     condo_data_fk = db.relationship('Condos_Data', backref='condos', lazy='dynamic')
 
 
