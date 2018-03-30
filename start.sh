@@ -11,7 +11,7 @@ sudo apt-get install libmysqlclient-dev
 pip install -r requirements.txt
 
 rm instance/config.py
-touch istance/config.py
+touch instance/config.py
 
 echo -n "Run local or production (l/p)?"
 read answer
