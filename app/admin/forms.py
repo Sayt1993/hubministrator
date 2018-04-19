@@ -8,9 +8,9 @@ from wtforms.validators import DataRequired, Email, EqualTo
 class CondoDetailsForm(FlaskForm):
     condo_name = StringField('Nome condominio')
     condo_age = DateField('Data di registrazione')
-    cf_c = StringField('Cf_c')
+    cf_c = StringField('C.F.')
     city = StringField('Citta')
-    district = StringField('Distretto')
+    district = StringField('Quartiere')
     address = StringField('Indirizzo')
     house_n = IntegerField('N. di interni')
     condo_n = IntegerField('N. di condomini')

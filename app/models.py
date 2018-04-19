@@ -41,11 +41,11 @@ class User(db.Model, UserMixin):
     def id(self):
         """Return an identifier."""
         return self.id_usr
-    
+
     def __repr__(self):
         return '<USER: {}>'.format(self.username)
-    
-    
+
+
 
 class Resident_Registry(db.Model):
 
@@ -66,7 +66,7 @@ class Resident_Registry(db.Model):
     flat = db.Column(db.String(2), nullable=False)
     thousandths = db.Column(db.Float, nullable=False)
     id_usr = db.Column(db.Integer, db.ForeignKey('users.id_usr'))
-    
+
     condo_fk = db.relationship('Condo', backref='residents_registry', lazy='dynamic')
 
 
@@ -129,17 +129,18 @@ class Condo(db.Model):
     __tablename__ = 'condos'
     id_condo = db.Column(db.Integer, primary_key=True, autoincrement=True)
     condo_name = db.Column(db.String(30), nullable=False)
-    
+
     id_admin = db.Column(db.Integer, db.ForeignKey('administrators_registry.id_admin'))
     id_provider = db.Column(db.Integer, db.ForeignKey('providers_registry.id_provider'))
     id_resident = db.Column(db.Integer, db.ForeignKey('residents_registry.id_resident'))
-    
+
     condo_data_fk = db.relationship('Condos_Data', backref='condos', lazy='dynamic')
 
 
 class Condos_Data(db.Model):
 
     __tablename__ = 'condos_data'
+    rif_n = db.Column(db.Integer)
     condo_name = db.Column(db.String(30))
     condo_age = db.Column(db.Date, nullable=False)
     cf_c = db.Column(db.String(16), nullable=False)
@@ -153,7 +154,7 @@ class Condos_Data(db.Model):
     cap = db.Column(db.Integer)
     id_condo = db.Column(db.Integer, db.ForeignKey('condos.id_condo'), primary_key=True)
 
-    
+
 # Set up user_loader
 @login_manager.user_loader
 def load_user(id_usr):
